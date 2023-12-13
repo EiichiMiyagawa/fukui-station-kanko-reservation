@@ -4,6 +4,7 @@ import { Day, TimeZone } from "https://js.sabae.cc/DateTime.js";
 const domain = Deno.args[0];
 const getLatestHotelApi = domain + Deno.args[1];
 const getLatestRsvSumApi = domain + Deno.args[2];
+console.log(getLatestHotelApi);
 
 const hotelData = await (await fetch(getLatestHotelApi)).json();
 await Deno.writeTextFile("latest_hotel.csv", CSV.stringify(hotelData));
